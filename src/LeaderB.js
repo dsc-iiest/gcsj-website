@@ -5,7 +5,6 @@ import { CssBaseline, Box, Typography, Button } from '@mui/material';
 import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled';
 import cloud from './GCRFicon.png'
 
-
 function LeaderBoard() {
     return (
         <>

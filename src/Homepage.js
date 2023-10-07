@@ -13,7 +13,7 @@ function Homepage() {
             <Header />
             <Box className="banner">
                 <Typography className='bannerText' sx={{ fontFamily: "Poppins", fontSize: "4.5rem", fontWeight: "bold" }}> Cloud Study Jams</Typography>
-                <Box sx={{paddingTop: "1rem"}}>
+                {/* <Box sx={{paddingTop: "1rem"}}>
                     <Button
                         size="large"
                         startIcon={<LocationOnIcon />}
@@ -47,7 +47,7 @@ function Homepage() {
                             fontWeight: 700
                         }}>Chapters
                     </Button>
-                </Box>
+                </Box> */}
             </Box>
             <Content />
             <CssBaseline />

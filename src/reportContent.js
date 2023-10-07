@@ -1,6 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
 import TextField from '@mui/material/TextField';
-import cloud from './GCRFicon.png'
 import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 
 const ReportContent = () => {
@@ -33,7 +32,7 @@ const ReportContent = () => {
                 <Typography variant="body1" sx = {{fontSize: "1.5rem", "fontFamily": "poppins", fontWeight: 600}}>Enter your email</Typography>
                 <Box sx = {{display: "flex", placeItems: "center"}}>
                     <AlternateEmailIcon sx = {{position: "relative", top: "0.5rem", left: "1rem"}} />
-                    <TextField id="standard-basic" label="Email" variant="standard"
+                    <TextField id="standard-basic" label="Email" 
                         sx = {{
                             m:"2rem",
                             borderRadius: "1rem",

@@ -50,7 +50,7 @@ export default function Content() {
                         "position": "relative",
                         "top": "0.8rem",
                         "left": "-10rem",
-                        "margin-right": "0.4rem"
+                        "marginRight": "0.4rem"
                     }} />
 
             </Box>
@@ -65,8 +65,8 @@ export default function Content() {
                 <Box sx={{
                     display: "flex",
                 }}>
-                    <img src={codeIIEST} style={{ "width": "7rem", "margin": "3rem", "justify-self": "center", "align-self": "center" }} />
-                    <img src={GdscLogo} style={{ "width": "22rem", "margin": "3rem", "justify-self": "center", "align-self": "center" }} />
+                    <img src={codeIIEST} style={{ "width": "7rem", "margin": "3rem", "justifySelf": "center", "alignSelf": "center" }} />
+                    <img src={GdscLogo} style={{ "width": "22rem", "margin": "3rem", "justifySelf": "center", "alignSelf": "center" }} />
                 </Box>
 
                 <Typography variant='h3' sx={{ justifyContent: "center", padding: "1.5rem", paddingTop: 0, fontWeight: 600 }}>
