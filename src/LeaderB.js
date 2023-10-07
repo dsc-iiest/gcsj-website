@@ -1,41 +1,22 @@
+import LeaderBcontent from './LeaderBContent'
 import Header from './Header';
-import LContent from './LeadetBContent';
 import Footer from './footer';
-import { CssBaseline, Box, Typography, Button } from '@mui/material';
-import ReplayCircleFilledIcon from '@mui/icons-material/ReplayCircleFilled';
-import cloud from './GCRFicon.png'
+import { CssBaseline, Box, Typography } from '@mui/material';
 
-function LeaderBoard() {
+const Report = () => {
     return (
         <>
             <CssBaseline />
             <Header />
             <Box className="Lbanner">
-                <img src={cloud} style = {{width: "10rem"}} />
-                <Typography sx={{ fontFamily: "Poppins", fontSize: "4.5rem", fontWeight: "bold" }}> LeaderBoard</Typography>
-                <Typography variant="h6" sx = {{width: "70ch"}}>Explore the achievements and accomplishments of our outstanding community members. Our leaderboard showcases the dedication, talent, and hard work of individuals who have excelled in various fields. </Typography>
-                <Button
-                    size="large"
-                    startIcon={<ReplayCircleFilledIcon size="large"/>}
-                    sx={{
-                        my: "1rem",
-                        borderTop: "0.3rem solid #da483b",
-                        borderBottom: "0.3rem solid #ff9e0f",
-                        borderLeft: "0.3rem solid #1ca45c",
-                        borderRight: "0.3rem solid #4486f4",
-                        color: "#da483b",
-                        borderRadius: "1rem",
-                        width: "12rem",
-                        fontWeight: 700
-                    }}>Refresh
-                </Button>
-
+                <Typography sx={{ fontWeight: 600, padding: "2rem", fontSize: "min(12vw, 4rem)" }}>LeaderBoard</Typography>
+                <Typography variant="h6" sx={{ textAlign: "center", minWidth: "28ch", maxWidth: "70ch" }}>Discover the top performers and track your progress with our leaderboard. Join the competition and climb the ranks to showcase your skills!</Typography>
             </Box >
-            <LContent />
+            <LeaderBcontent />
             <CssBaseline />
             <Footer />
         </>
     )
 }
 
-export default LeaderBoard;
+export default Report
