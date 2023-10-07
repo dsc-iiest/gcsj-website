@@ -1,39 +1,64 @@
-import { Box, Button, Typography } from '@mui/material'
-import React from 'react'
-import HomeIcon from '@mui/icons-material/Home';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import GCRFicon from './GCRFicon.png'
-import LeaderboardIcon from '@mui/icons-material/Leaderboard';
-import { Link as RouterLink } from 'react-router-dom';
+import {IconButton, Menu, MenuItem, AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme, CssBaseline } from '@mui/material'
+import { React, useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
+import CloudIcon from './GCRFicon.png'
+import { NavLink } from "react-router-dom";
 
+const Menubutton = () => {
+    const [anchorElm, setAnchorElm] = useState(null);
+    const [open, setOpen] = useState(false)
 
-export default function Header() {
-	return (
-		<Box sx={{
-			display: 'flex',
-			backgroundColor: "#00000090",
-			backdropFilter: "blur(0.3rem)",
-			gap: "1rem",
-			padding: "1rem",
-			position: "fixed",
-			top: "0.1px",
-			width: "100%",
-			zIndex: 1,
-		}}>
-			<Typography sx={{
-				fontSize: '1.5rem',
-				fontFamily: 'Poppins',
-				fontWeight: 500,
-				flexGrow: 1,
-				color: "#fff"
-			}}
-			>
-				<img src={GCRFicon} style={{ "width": "2rem", position: "relative", top: "0.2rem" }} /> GCSJ
-			</Typography>
-			<RouterLink to="/"><Button className='btn' sx={{ color: "#fff" }} startIcon={<HomeIcon />}>Home</Button></RouterLink>
-			<RouterLink to="/Report"><Button className='btn' sx={{ color: "#fff" }} startIcon={<FormatListBulletedIcon />}>report</Button></RouterLink>
-			<RouterLink to="/LeaderBoard"><Button className='btn' sx={{ color: "#fff" }} startIcon={<LeaderboardIcon />}>leaderboard</Button></RouterLink>
+    const handleClose = ()=>{
+        setAnchorElm(null);
+        setOpen(false);
+    }
+    const handleClick = (e)=>{
+        setAnchorElm(e.currentTarget);
+        setOpen(true);
+    }
 
-		</Box>
-	)
+  return (
+    <Toolbar sx = {{marginLeft: "auto"}}>
+        <IconButton color = "inherit" onClick = {handleClick}>
+            <MenuIcon />
+        </IconButton>
+        <Menu 
+            anchorEl={anchorElm}
+            open = {open}
+            onClose={handleClose}			
+        >
+            <NavLink style = {{textDecoration: "none"}} to = "/"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Home</MenuItem></NavLink>
+            <NavLink style = {{textDecoration: "none"}} to = "/resources"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Resources</MenuItem></NavLink>
+            <NavLink style = {{textDecoration: "none"}} to = "/leaderboard"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Leaderboard </MenuItem></NavLink>
+        </Menu>
+    </Toolbar>
+  )
 }
+
+const HeaderTabs = ()=>{
+  return (
+    <Tabs textColor="inherit" sx={{ marginLeft: "auto" }} TabIndicatorProps={{ style: { "backgroundColor": "rgb(0, 200, 255)" } }}>
+      <NavLink className="navlink" to="/"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Home" /></NavLink>
+      <NavLink className="navlink" to="/resources"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Resources" /></NavLink>
+      <NavLink className="navlink" to="/leaderboard"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Leaderboard" /></NavLink>
+    </Tabs>
+  )
+}
+
+const HeaderComp = () => {
+  const theme = useTheme()
+  const mobileView = useMediaQuery(theme.breakpoints.down("sm"))
+  return (
+    <>
+    <AppBar sx = {{backdropFilter: "blur(4px)", background: "rgba(0, 0, 0, 0.7)"}}>
+      <Toolbar>
+        <img src={CloudIcon} alt="appIcon" style = {{"width": "1.8rem", "margin": "0.5rem"}} /><Typography variant="body1">GCSJ</Typography>
+        {mobileView?<Menubutton />:<HeaderTabs />}
+      </Toolbar>
+    </AppBar>
+    <CssBaseline />
+    </>
+  )
+}
+
+export default HeaderComp

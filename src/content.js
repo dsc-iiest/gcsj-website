@@ -2,7 +2,6 @@ import { Box, Divider, Toolbar, Typography } from "@mui/material";
 import codeIIEST from './codeIIEST.png'
 import gdsc from './gdscLogo.png'
 import MediaCard from "./profile";
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 import Profile1 from "./Jyoti.jpg"
 import Profile2 from "./Arnab.jpeg"
@@ -16,11 +15,12 @@ export default function Content() {
                 alignItems: "center",
                 justifyContent: "center"
             }}>
-                <Typography variant='h3' sx={{ padding: "1.5rem", paddingTop: 0, fontWeight: 600 }}>
-                    <RocketLaunchIcon style={{ fontSize: "2.5rem" }} />About the Program
+                <Typography variant='h3' sx={{textAlign: "center", padding: "1.5rem", paddingTop: 0, fontWeight: 600 }}>
+                    About the Program
+                <Divider />
                 </Typography>
 
-                <Typography variant='body' sx={{ maxWidth: "75ch", minwidth: "50ch", padding: "1rem"}}>
+                <Typography variant='body' sx={{textAlign: "center", maxWidth: "75ch", minwidth: "50ch", padding: "1rem"}}>
                     The GoogleCloudReady Facilitator program will provide you an opportunity to kickstart your career in cloud and get hands on practice on Google Cloud - the tool that powers apps like Google Search, Gmail and YouTube.<br /><br />
                     Along the way, you will learn & practice concepts like computing, application development, big data & machine learning using cloud & if you get stuck, you will have your "Facilitators" who are specially trained on Google Cloud to help. 😎 Check out the official website to know more about this program
                 </Typography>
@@ -31,17 +31,17 @@ export default function Content() {
                 flexDirection: "column",
                 justifyContent: "center",
                 alignItems: "center",
-                gap: "1rem"
+                gap: "1rem",
+                
             }}>
-                <Box sx={{
-                    display: "flex",
-                }}>
+                <Box className="logohome" sx = {{background: "transparent"}} >
+                    <img src = {codeIIEST} style = {{maxWidth: "10rem"}}/>
+                    <img src = {gdsc} style = {{maxWidth: "20rem"}}/>
                 </Box>
 
-                <Box className="logohome" ><img src = {codeIIEST} style = {{maxWidth: "10rem"}}/><img src = {gdsc} style = {{maxWidth: "20rem"}}/></Box>
-
                 <Typography variant='h3' sx={{ justifyContent: "center", padding: "1.5rem", paddingTop: "3rem", fontWeight: 600 }}>
-                    <RocketLaunchIcon style={{ fontSize: "2.5rem" }} />Our Facilitators
+                    Our Facilitators
+                    <Divider />
                 </Typography>
 
                 <Toolbar sx={{ display: "flex", flexWrap: "wrap", textAlign: "center", maxWidth: "75ch" }}>
