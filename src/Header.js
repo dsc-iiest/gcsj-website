@@ -17,7 +17,7 @@ export default function Header() {
 			padding: "1rem",
 			position: "fixed",
 			top: "0.1px",
-			width: "100vw",
+			width: "100%",
 			zIndex: 1,
 		}}>
 			<Typography sx={{

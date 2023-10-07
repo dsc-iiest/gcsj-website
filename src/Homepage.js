@@ -12,7 +12,12 @@ function Homepage() {
             <CssBaseline />
             <Header />
             <Box className="banner">
-                <Typography className='bannerText' sx={{ fontFamily: "Poppins", fontSize: "4.5rem", fontWeight: "bold" }}> Cloud Study Jams</Typography>
+                <Typography className='bannerText' 
+                            sx={{ fontFamily: "Poppins", 
+                                  fontSize: "4.2em", 
+                                  fontWeight: "bold",
+                                  lineHeight: "5rem",
+                                  }}> Cloud Study Jams</Typography>
                 <Box sx={{paddingTop: "1rem"}}>
                     <Button
                         size="large"
@@ -20,7 +25,8 @@ function Homepage() {
                         sx={{
                             border: "0.2rem solid #da483b",
                             color: "#da483b",
-                            borderRadius: "1rem 0 0 1rem",
+                            borderRadius: "0.8rem",
+                            margin: "0.8rem",
                             width: "12rem",
                             fontWeight: 700
                         }}>IIEST, Shibpur
@@ -31,7 +37,8 @@ function Homepage() {
                         sx={{
                             border: "0.2rem solid #ff9e0f",
                             color: "#ff9e0f",
-                            borderRadius: "0 0 0 0",
+                            borderRadius: "0.8rem",
+                            margin: "0.5rem",
                             width: "16rem",
                             fontWeight: 700
                         }}>Upcoming Events
@@ -42,7 +49,8 @@ function Homepage() {
                         sx={{
                             border: "0.2rem solid #1ca45c",
                             color: "#1ca45c",
-                            borderRadius: "0 1rem 1rem 0",
+                            borderRadius: "0.8rem",
+                            margin: "0.8rem",
                             width: "10rem",
                             fontWeight: 700
                         }}>Chapters

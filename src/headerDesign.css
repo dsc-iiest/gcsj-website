@@ -11,7 +11,7 @@
     font-family: 'Poppins';
 }
 
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -19,11 +19,11 @@
     color: rgb(217, 217, 217);
     --bg-dark: rgba(1, 0, 66, 1);
     --bg-light: hsl(241, 64%, 27%);
-}
+} */
 
 body {
-    color: #d7d7d7;
-    background-image: repeating-linear-gradient(30deg,var(--bg-dark),var(--bg-dark) 20%,var(--bg-light) 30%,var(--bg-light) 50%,var(--bg-dark) 60%);
+    color: #242424;
+    background-color: hsl(0, 0%, 90%);
     overflow-x: hidden;
 }
 
@@ -55,18 +55,22 @@ body {
     transform: scaleX(50);
 }
 
-.banner, .Lbanner, .Rbanner {
+.banner,
+.Lbanner,
+.Rbanner {
     background: rgba(0, 0, 0, .65) url("banner.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    color: #fff;
-    width: 100vw;
-    height: 100vh;
+    background-position: center;
+    color: hsl(0, 0%, 100%);
+    width: 100%;
+    padding: 8rem;
+    padding-bottom: 15vw;
     display: flex;
     align-items: center;
     justify-content: center;
     background-blend-mode: darken;
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .Lbanner {
@@ -75,7 +79,7 @@ body {
 }
 
 .Rbanner {
-    background: rgba(0, 0, 0, .65) url("bannerR.webp");
+    background: rgba(0, 0, 0, .65) url("bannerR.jpg");
     background-position: top;
 }
 
@@ -90,13 +94,12 @@ body {
     position: relative;
     top: 1.5rem;
     right: 0.5rem;
-
 }
 
 .profilepic {
     border-radius: 50%;
-    width: 15rem;
-    height: 15rem;
+    width: 14rem;
+    height: 14rem;
     border-top: 0.5rem solid #da483b;
     border-bottom: 0.5rem solid #ff9e0f;
     border-left: 0.5rem solid #1ca45c;
@@ -104,36 +107,21 @@ body {
     margin-top: 1rem;
 }
 
-.leadertable {
-    display: grid;
-    grid-template-columns: 0.1fr 0.4fr 0.3fr 0.2fr 0.2fr;
-    gap: 0.2rem;
-}
-
-.tableHeader {
+.logohome {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    background-color: hsl(0, 0%, 100%);
     border-radius: 0.5rem;
-    border-top: 0.2rem solid #da483b;
-    border-bottom: 0.2rem solid #ff9e0f;
-    border-left: 0.2rem solid #1ca45c;
-    border-right: 0.2rem solid #4486f4;
-    font-weight: 600;
+    padding: 1rem;
+}
+
+.logohome > img {
+    margin: 20px;
+}
+
+.header {
+    background-color: hsl(0, 0%, 90%);
     text-align: center;
-    color: #1ca45c;
-}
-
-.tabledata, .tableyou {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.2rem;
-}
-
-.tableyou {
-    color: #fff;
-    border-radius: 0.4rem;
-    padding: 0.4rem;
-    background: linear-gradient(45deg, #1ca45c, #4486f4);
 }
