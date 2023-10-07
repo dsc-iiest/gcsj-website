@@ -1,29 +1,137 @@
-.App {
-	text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: 0;
+    font-family: 'Poppins';
 }
 
-.App-logo {
-	height: 40vmin;
-	pointer-events: none;
+body {
+    color: #242424;
+    background-color: hsl(0, 0%, 90%);
+    overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-	.App-logo {
-		animation: App-logo-spin infinite 20s linear;
-	}
+.btn {
+    padding: 0.5em 1.5em;
+    background-color: inherit;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+    border: none;
+    transition: all 0.1s linear;
 }
 
-.App-header {
-	background-color: #282c34;
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	font-size: calc(10px + 2vmin);
-	color: white;
+
+.btn::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 2px;
+    opacity: 0;
+    height: calc(100% + 0.30em);
+    border-bottom: 2px solid #fff;
+    transition: all 0.2s linear;
 }
 
-.App-link {
-	color: #61dafb;
+.btn:hover::after {
+    opacity: 1;
+    transform: scaleX(50);
+}
+
+.banner,
+.Lbanner,
+.Rbanner {
+    background: rgba(0, 0, 0, .65) url("banner.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: hsl(0, 0%, 100%);
+    width: 100%;
+    padding: 8rem;
+    padding-bottom: 15vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-blend-mode: darken;
+    flex-wrap: wrap;
+}
+
+.Lbanner {
+    background: rgba(0, 0, 0, .65) url("bannerL.jpg");
+    background-position: top;
+}
+
+.Rbanner {
+    background: rgba(0, 0, 0, .65) url("bannerR.jpg");
+    background-position: top;
+}
+
+.bannerText::before {
+    content: "";
+    background-image: url('./google.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 18rem;
+    height: 6rem;
+    display: inline-block;
+    position: relative;
+    top: 1.5rem;
+    right: 0.5rem;
+}
+
+.profilepic {
+    border-radius: 50%;
+    width: 14rem;
+    height: 14rem;
+    border-top: 0.5rem solid #da483b;
+    border-bottom: 0.5rem solid #ff9e0f;
+    border-left: 0.5rem solid #1ca45c;
+    border-right: 0.5rem solid #4486f4;
+    margin-top: 1rem;
+}
+
+.logohome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.5rem;
+    padding: 1rem;
+}
+
+.logohome > img {
+    margin: 20px;
+}
+
+.header {
+    background-color: hsl(0, 0%, 70%);
+    color: #fff;
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+	background-color: transparent;
+	margin-left: 5px;
+	padding: 5px;
+	border: 0px solid red;
+}
+::-webkit-scrollbar-thumb{
+	background-color: rgba(255, 255, 255, 0.258);
+	background-color: rgba(255, 255, 255, 0.5);
+	/* background-color: var(--teal-dark); */
+	border-radius: 25px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(255, 255, 255, 0.46);
+}
+
+.leaderboard {
+    width: 100%;
+    border-radius: 10px;
 }
