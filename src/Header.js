@@ -1,5 +1,4 @@
-import "./App.css"
-import {IconButton, Menu, MenuItem, AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material'
+import {IconButton, Menu, MenuItem, AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme, CssBaseline } from '@mui/material'
 import { React, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloudIcon from './GCRFicon.png'
@@ -26,24 +25,22 @@ const Menubutton = () => {
         <Menu 
             anchorEl={anchorElm}
             open = {open}
-            onClose={handleClose}
-			
+            onClose={handleClose}			
         >
-            <MenuItem sx = {{color: "black"}} onClick={handleClose}>Home</MenuItem>
-            <MenuItem sx = {{color: "black"}} onClick={handleClose}>Report</MenuItem>
-            <MenuItem sx = {{color: "black"}} onClick={handleClose}>Leaderboard </MenuItem>
+            <NavLink style = {{textDecoration: "none"}} to = "/"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Home</MenuItem></NavLink>
+            <NavLink style = {{textDecoration: "none"}} to = "/resources"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Resources</MenuItem></NavLink>
+            <NavLink style = {{textDecoration: "none"}} to = "/leaderboard"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Leaderboard </MenuItem></NavLink>
         </Menu>
     </Toolbar>
   )
 }
 
 const HeaderTabs = ()=>{
-  const [value, setValue] = useState(0);
   return (
-    <Tabs textColor="inherit" value={value} onChange={(e, value) => setValue(value)} sx={{ marginLeft: "auto" }} TabIndicatorProps={{ style: { "backgroundColor": "rgb(0, 200, 255)" } }}>
-      <NavLink className="navlink" to="/"><Tab sx={{ fontSize: "0.8rem" }} label="Home" /></NavLink>
-      <NavLink className="navlink" to="/report"><Tab sx={{ fontSize: "0.8rem" }} label="Report" /></NavLink>
-      <NavLink className="navlink" to="/leaderboard"><Tab sx={{ fontSize: "0.8rem" }} label="Leaderboard" /></NavLink>
+    <Tabs textColor="inherit" sx={{ marginLeft: "auto" }} TabIndicatorProps={{ style: { "backgroundColor": "rgb(0, 200, 255)" } }}>
+      <NavLink className="navlink" to="/"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Home" /></NavLink>
+      <NavLink className="navlink" to="/resources"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Resources" /></NavLink>
+      <NavLink className="navlink" to="/leaderboard"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Leaderboard" /></NavLink>
     </Tabs>
   )
 }
@@ -52,12 +49,15 @@ const HeaderComp = () => {
   const theme = useTheme()
   const mobileView = useMediaQuery(theme.breakpoints.down("sm"))
   return (
-    <AppBar sx = {{background: "rgba(0, 0, 0, 0.7)"}}>
+    <>
+    <AppBar sx = {{backdropFilter: "blur(4px)", background: "rgba(0, 0, 0, 0.7)"}}>
       <Toolbar>
         <img src={CloudIcon} alt="appIcon" style = {{"width": "1.8rem", "margin": "0.5rem"}} /><Typography variant="body1">GCSJ</Typography>
         {mobileView?<Menubutton />:<HeaderTabs />}
       </Toolbar>
     </AppBar>
+    <CssBaseline />
+    </>
   )
 }
 

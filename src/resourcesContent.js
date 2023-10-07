@@ -13,8 +13,8 @@ const ReportContent = () => {
       };
     return (
         <Box className="Rbanner" sx = {{display: "flex", flexDirection: "column", placeItems: "center", paddingBottom : "2rem"}}>
-            <Typography variant="h1" sx = {{fontWeight:600, paddingTop: "2rem"}}>Report</Typography>
-            <Typography variant="h6" sx = {{textAlign : "center", width: "70ch"}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit aliquam rem alias enim earum a ipsa. Voluptatibus, adipisci facere. Accusantium tenetur laboriosam, illum pariatur adipisci possimus suscipit iure cupiditate recusandae!</Typography>
+            <Typography variant="h2" sx = {{fontWeight:600, paddingTop: "2rem"}}>Resources</Typography>
+            <Typography variant="h6" sx = {{textAlign : "center", width: "70ch"}}>Some random text about resources</Typography>
             <Box sx = {{backdropFilter: "blur(0.2rem)",
                     backgroundColor: "#00000090",
                     borderRadius: "1.5rem",
@@ -32,7 +32,7 @@ const ReportContent = () => {
                 <Typography variant="body1" sx = {{fontSize: "1.5rem", "fontFamily": "poppins", fontWeight: 600}}>Enter your email</Typography>
                 <Box sx = {{display: "flex", placeItems: "center"}}>
                     <AlternateEmailIcon sx = {{position: "relative", top: "0.5rem", left: "1rem"}} />
-                    <TextField id="standard-basic" label="Email" 
+                    <TextField id="outlined-basic" label="Email" 
                         sx = {{
                             m:"2rem",
                             borderRadius: "1rem",

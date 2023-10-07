@@ -2,7 +2,7 @@ import Homepage from './Homepage'
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LeaderBoard from './LeaderB';
-import Report from './Report';
+import Report from './Resources';
 import Footer from './footer';
 import Header from './Header';
 
@@ -13,7 +13,7 @@ export default function App() {
             <Routes>
                 <Route exact path='/' element={<Homepage/>} />
                 <Route exact path="/leaderboard" element={<LeaderBoard />} />
-                <Route exact path="/report" element={<Report />} />
+                <Route exact path="/resources" element={<Report />} />
             </Routes>
             <Footer />
         </Router>

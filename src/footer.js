@@ -1,4 +1,4 @@
-import { Box, Button, IconButton, Typography, Divider, Link } from '@mui/material'
+import { Box, IconButton, Typography, Link} from '@mui/material'
 import React from 'react'
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -6,19 +6,13 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MailIcon from '@mui/icons-material/Mail';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import EmailIcon from '@mui/icons-material/Email';
 import GdscLogo from './gdscLogo.png'
-import HomeIcon from '@mui/icons-material/Home';
-import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
-import LeaderboardIcon from '@mui/icons-material/Leaderboard';
 import codeIIEST from './codeIIEST.png'
-import { Link as RouterLink } from 'react-router-dom';
-
-
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function Footer() {
     return (
-        <Box sx = {{color: "#fff"}}>
+        <Box sx = {{color: "rgba(255, 255, 255, 0.48)"}}>
             <Box sx={{
                 display: 'flex',
                 backgroundColor: "rgb(1, 0, 50)",
@@ -28,58 +22,34 @@ export default function Footer() {
                 width: "100%",
                 flexWrap:"wrap"
             }}>
-                <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                    <img src={GdscLogo} style={{ "width": "15rem", paddingBottom: "2rem" }} />
-                    <img src={codeIIEST} style={{ "width": "3rem", paddingBottom: "2rem" }} />
+                <Box sx={{display: "flex", alignItems: "center", width: "100%", gap: "3rem",justifyContent :"center" }}>
+                    <img src={codeIIEST} style={{ "width": "3.5rem" }} />
+                    <img src={GdscLogo} style={{ "width": "13rem" }} />
                 </Box>
-                <Typography sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "left"
-                }}>
-
-                    <Typography color="inherit" sx={{ px: "2rem" }}>About Us</Typography>
-                    <Typography sx={{ color: "#969696", fontSize: "0.8rem", maxWidth: "30ch", px: "2rem", paddingTop: "1rem" }}>GDSC and codeIIEST are in collaboration</Typography>
-
-
-                </Typography>
-
-                <Typography sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "left"
-                }}>
-                    <Typography color="inherit" sx={{ px: "2rem" }}>Contact Us</Typography>
-                    <Link href="#" sx={{ color: "#969696", fontSize: "0.8rem", maxWidth: "30ch", px: "2.2rem" }}><EmailIcon sx={{ position: "relative", top: "0.4rem", fontSize: "1.2rem", m: "0.2rem" }} />abcde@gmail.com</Link>
-                </Typography>
-
-                <Typography sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "center",
-                    alignItems: "left"
-                }}>
-                    <Typography color="inherit" sx={{ px: "2rem" }}>Quick links</Typography>
-                    <Link href="#" sx={{ color: "#969696", fontSize: "0.8rem", maxWidth: "30ch", px: "2.2rem" }}><HomeIcon sx={{ position: "relative", top: "0.4rem", fontSize: "1.2rem", m: "0.2rem" }} />Home</Link>
-                    <Link href="#" sx={{ color: "#969696", fontSize: "0.8rem", maxWidth: "30ch", px: "2.2rem" }}><FormatListBulletedIcon sx={{ position: "relative", top: "0.4rem", fontSize: "1.2rem", m: "0.2rem" }} />Report</Link>
-                    <Link href="#" sx={{ color: "#969696", fontSize: "0.8rem", maxWidth: "30ch", px: "2.2rem" }}><LeaderboardIcon sx={{ position: "relative", top: "0.4rem", fontSize: "1.2rem", m: "0.2rem" }} />Leaderboard</Link>
-                </Typography>
-
-
-
+                
             </Box>
-            <Box sx={{ display: "flex", flexDirection: "column", backgroundColor: "rgb(1, 0, 50)", justifyContent: "center" }}>
-                <Divider />
+
+            <Box sx={{ display: "flex", flexDirection: "column", backgroundColor: "rgb(1, 0, 50)", justifyContent: "center", paddingTop: "1rem" }}>
                 <Typography sx={{ textAlign: "center" }}>Stay in the loop?</Typography>
-                <Box sx={{ display: "flex", "justifyContent": "center", py: "0.3rem", color : "green"}}>
-                    <IconButton sx={{color:"#fff"}}><TwitterIcon /></IconButton>
-                    <IconButton sx={{color:"#fff"}}><GitHubIcon /></IconButton>
-                    <IconButton sx={{color:"#fff"}}><FacebookIcon /></IconButton>
-                    <IconButton sx={{color:"#fff"}}><MailIcon /></IconButton>
-                    <IconButton sx={{color:"#fff"}}><YouTubeIcon /></IconButton>
-                    <IconButton sx={{color:"#fff"}}><LinkedInIcon /></IconButton>
+                <Box sx={{ display: "flex", "justifyContent": "center", py: "0.3rem"}}>
+                    <IconButton className="footerhover" sx={{color:"#cdcdcd"}}><TwitterIcon /></IconButton>
+                    <IconButton className="footerhover" sx={{color:"#cdcdcd"}}><GitHubIcon /></IconButton>
+                    <IconButton className="footerhover" sx={{color:"#cdcdcd"}}><FacebookIcon /></IconButton>
+                    <IconButton className="footerhover" sx={{color:"#cdcdcd"}}><MailIcon /></IconButton>
+                    <IconButton className="footerhover" sx={{color:"#cdcdcd"}}><YouTubeIcon /></IconButton>
+                    <IconButton className="footerhover" sx={{color:"#cdcdcd"}}><LinkedInIcon /></IconButton>
+                </Box>
+                <Box sx={{ display: "flex", "justifyContent": "center", paddingBottom: "0.5rem", paddingTop: "1rem"}}>
+                    <Typography 
+                        sx={{
+                        color: "rgba(255, 255, 255, 0.48)",
+                        fontFamily: "poppins",
+                        display: "flex",
+                        flexWrap :"wrap",
+                        justifyContent:"center"
+                    }}>
+                        Made with <FavoriteIcon sx = {{color: "red", position: "relative", mx: "0.5rem"}}/> by <Link className="footerhover" href="#" sx={{textDecoration: "none" ,fontFamily: "poppins",color: "white", px: "0.5rem"}}>Soumyajit Karmakar</Link> and <Link className="footerhover" href="#" sx={{textDecoration: "none" ,fontFamily: "poppins",color: "white", px: "0.5rem"}}>Abhijit Karmakar</Link>
+                    </Typography>
                 </Box>
             </Box>
         </Box>
