@@ -113,7 +113,8 @@ body {
 }
 
 .header {
-    background-color: hsl(0, 0%, 90%);
+    background-color: hsl(218, 89%, 71%);
+    color: #fff;
     text-align: center;
 }
 .navlink.active{

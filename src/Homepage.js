@@ -19,7 +19,7 @@ function Homepage() {
                         startIcon={<LocationOnIcon />}
                         sx={{
                             border: "0.2rem solid #da483b",
-                            color: "#da483b",
+                            // color: "#da483b",
                             borderRadius: "0.8rem",
                             margin: "0.8rem",
                             width: "12rem",
