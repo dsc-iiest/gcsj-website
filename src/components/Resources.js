@@ -1,5 +1,4 @@
-import Content from './content';
-import { CssBaseline, Box, Typography, Button} from '@mui/material';
+import { Box, Typography, Button} from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 function Resources() {

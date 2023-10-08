@@ -6,8 +6,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import MailIcon from '@mui/icons-material/Mail';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import GdscLogo from './gdscLogo.png'
-import codeIIEST from './codeIIEST.png'
+import GdscLogo from '../assets/gdscLogo.png'
+import codeIIEST from '../assets/codeIIEST.png'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
 export default function Footer() {
@@ -15,7 +15,7 @@ export default function Footer() {
         <Box sx = {{color: "rgba(255, 255, 255, 0.48)"}}>
             <Box sx={{
                 display: 'flex',
-                backgroundColor: "rgb(1, 0, 50)",
+                backgroundColor: "hsl(0, 0.00%, 12%)",
                 gap: "1rem",
                 padding: "1rem",
                 alignItems: "center",
@@ -29,7 +29,7 @@ export default function Footer() {
                 
             </Box>
 
-            <Box sx={{ display: "flex", flexDirection: "column", backgroundColor: "rgb(1, 0, 50)", justifyContent: "center", paddingTop: "1rem" }}>
+            <Box sx={{ display: "flex", flexDirection: "column", backgroundColor: "hsl(0, 0.00%, 12%)", justifyContent: "center", paddingTop: "1rem" }}>
                 <Typography sx={{ textAlign: "center" }}>Stay in the loop?</Typography>
                 <Box sx={{ display: "flex", "justifyContent": "center", py: "0.3rem"}}>
                     <IconButton className="footerhover" sx={{color:"#cdcdcd"}}><TwitterIcon /></IconButton>

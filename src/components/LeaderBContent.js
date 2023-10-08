@@ -3,7 +3,7 @@ import { Box, CssBaseline, Typography } from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
 import * as XLSX from 'xlsx'
 
-const excelFilePath = './assets/data/leaderboard.xlsx';
+const excelFilePath = '../assets/data/leaderboard.xlsx';
 
 function readExcelFile(filePath) {
     const workbook = XLSX.readFile(filePath);
@@ -88,22 +88,23 @@ function LeaderBoardTablularize() {
                 rows={rows}
                 columns={columns}
                 sx={{
-                    '& .MuiDataGrid-row': {
-                        background: "#fff"
-                    },
                     '& .MuiDataGrid-row:nth-of-type(1)': {
-                        color: 'hsl(51, 100.00%, 40.00%)',
-                        backgroundColor: 'hsl(51, 100.00%, 90.00%)',
+                        color: 'hsl(51, 100.00%, 35.00%)',
+                        backgroundColor: 'hsl(51, 100.00%, 70.00%)',
                         fontWeight: 'bold'
                     },
+                    '& .MuiDataGrid-cell:': {
+                        display: "flex",
+                        alignContent: "center",
+                    },
                     '& .MuiDataGrid-row:nth-of-type(2)': {
-                        color: 'hsl(0, 0.00%, 60%)',
-                        backgroundColor: 'hsl(0, 0.00%, 95%)',
+                        color: 'hsl(0, 0.00%, 40%)',
+                        backgroundColor: 'hsl(0, 0.00%, 80%)',
                         fontWeight: 'bold'
                     },
                     '& .MuiDataGrid-row:nth-of-type(3)': {
-                        color: '#cd7f32',
-                        backgroundColor: 'hsl(30, 60.80%,85.00%)',
+                        color: 'hsl(30, 60.80%,40.00%)',
+                        backgroundColor: 'hsl(30, 60.80%,75.00%)',
                         fontWeight: 'bold'
                     },
                     '& .MuiDataGrid-row:hover': {
