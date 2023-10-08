@@ -1,7 +1,7 @@
 import {IconButton, Menu, MenuItem, AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme, CssBaseline } from '@mui/material'
 import { React, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
-import CloudIcon from './GCRFicon.png'
+import CloudIcon from '../assets/GCRFicon.png';
 import { NavLink } from "react-router-dom";
 
 const Menubutton = () => {
@@ -19,7 +19,7 @@ const Menubutton = () => {
 
   return (
     <Toolbar sx = {{marginLeft: "auto"}}>
-        <IconButton color = "inherit" onClick = {handleClick}>
+        <IconButton onClick = {handleClick}>
             <MenuIcon />
         </IconButton>
         <Menu 
@@ -37,22 +37,22 @@ const Menubutton = () => {
 
 const HeaderTabs = ()=>{
   return (
-    <Tabs textColor="inherit" sx={{ marginLeft: "auto" }} TabIndicatorProps={{ style: { "backgroundColor": "rgb(0, 200, 255)" } }}>
-      <NavLink className="navlink" to="/"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Home" /></NavLink>
-      <NavLink className="navlink" to="/resources"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Resources" /></NavLink>
-      <NavLink className="navlink" to="/leaderboard"><Tab sx={{color: "white", fontWeight: 660, fontSize: "0.8rem" }} label="Leaderboard" /></NavLink>
+    <Tabs>
+      <NavLink className="navlink" to="/"><Tab sx={{ color: "black", fontWeight: 600, fontSize: "0.8rem" }} label="Home" /></NavLink>
+      <NavLink className="navlink" to="/resources"><Tab sx={{ color: "black", fontWeight: 600, fontSize: "0.8rem" }} label="Resources" /></NavLink>
+      <NavLink className="navlink" to="/leaderboard"><Tab sx={{ color: "black", fontWeight: 600, fontSize: "0.8rem" }} label="Leaderboard" /></NavLink>
     </Tabs>
   )
 }
 
 const HeaderComp = () => {
   const theme = useTheme()
-  const mobileView = useMediaQuery(theme.breakpoints.down("sm"))
+  const mobileView = useMediaQuery(theme.breakpoints.down(800))
   return (
     <>
-    <AppBar sx = {{backdropFilter: "blur(4px)", background: "rgba(0, 0, 0, 0.7)"}}>
-      <Toolbar>
-        <img src={CloudIcon} alt="appIcon" style = {{"width": "1.8rem", "margin": "0.5rem"}} /><Typography variant="body1">GCSJ</Typography>
+    <AppBar sx = {{backgroundColor: "white"}}>
+      <Toolbar sx = {{display: "flex"}}>
+        <img src={CloudIcon} alt="appIcon" style = {{width: "2em", marginRight: "0.8rem"}} /><Typography variant="body1" sx = {{fontSize: "1.3rem", flexGrow: 1, color: "black", fontFamily: "poppins", fontWeight: 600}}>Google Cloud Study Jams</Typography>
         {mobileView?<Menubutton />:<HeaderTabs />}
       </Toolbar>
     </AppBar>

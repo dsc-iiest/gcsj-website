@@ -3,7 +3,7 @@ import { Box, CssBaseline, Typography } from "@mui/material";
 import { DataGrid } from '@mui/x-data-grid';
 import * as XLSX from 'xlsx'
 
-const excelFilePath = './assets/data/leaderboard.xlsx';
+const excelFilePath = '../assets/data/leaderboard.xlsx';
 
 function readExcelFile(filePath) {
     const workbook = XLSX.readFile(filePath);

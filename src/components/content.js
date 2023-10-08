@@ -1,10 +1,10 @@
 import { Box, Divider, Toolbar, Typography } from "@mui/material";
-import codeIIEST from './codeIIEST.png'
-import gdsc from './gdscLogo.png'
+import codeIIEST from '../assets/codeIIEST.png'
+import gdsc from '../assets/gdscLogo.png'
 import MediaCard from "./profile";
 
-import Profile1 from "./Jyoti.jpg"
-import Profile2 from "./Arnab.jpeg"
+import Profile1 from "../assets/Jyoti.jpg"
+import Profile2 from "../assets/Arnab.jpeg"
 
 export default function Content() {
     return (
@@ -40,7 +40,7 @@ export default function Content() {
                     <img src = {gdsc} style = {{maxWidth: "20rem"}}/>
                 </Box>
 
-                <Typography variant='h3' sx={{ justifyContent: "center", padding: "1.5rem", paddingTop: "3rem", fontWeight: 600 }}>
+                <Typography variant='h3' sx={{textAlign: "center", justifyContent: "center", padding: "1.5rem", paddingTop: "3rem", fontWeight: 600 }}>
                     Our Facilitators
                     <Divider />
                 </Typography>
