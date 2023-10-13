@@ -27,7 +27,7 @@ const Menubutton = () => {
             open = {open}
             onClose={handleClose}			
         >
-            <NavLink style = {{textDecoration: "none"}} to = "/"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Home</MenuItem></NavLink>
+            <NavLink style = {{textDecoration: "none"}} to = "/"><MenuItem sx = {{color: "black"}} onClick={handleClose}>Home</MenuItem></NavLink>
             <NavLink style = {{textDecoration: "none"}} to = "/resources"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Resources</MenuItem></NavLink>
             <NavLink style = {{textDecoration: "none"}} to = "/leaderboard"><MenuItem sx = {{ color: "black"}} onClick={handleClose}>Leaderboard </MenuItem></NavLink>
         </Menu>
