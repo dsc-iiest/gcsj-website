@@ -30,7 +30,7 @@ function Homepage() {
       }}><KeyboardDoubleArrowDownIcon 
       sx = {{
         fontSize: "2rem", 
-        opacity: 0.5,
+        opacity: 1,
         transition:"0.5s ease",
         "&:hover":{
           transform: "scale(1.5)"

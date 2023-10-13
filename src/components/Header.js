@@ -1,7 +1,7 @@
 import {IconButton, Menu, MenuItem, AppBar, Toolbar, Typography, useMediaQuery, useTheme, CssBaseline, Button, ButtonGroup } from '@mui/material'
 import { React, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
-import CloudIcon from '../assets/GCRFicon.png';
+import CloudIcon from '../assets/GCSJicon.png';
 import { NavLink } from "react-router-dom";
 
 const Menubutton = () => {
