@@ -8,7 +8,7 @@ import Profile2 from "../assets/Arnab.jpeg"
 
 export default function Content() {
     return (
-        <Box sx = {{paddingTop:"2rem", background: "hsl(0, 0%, 95%)"}}>
+        <Box sx = {{paddingTop:"2rem", background: "hsl(0, 0%, 95%)"}} id="start">
             <Box
                 sx={{
                 display: "flex",
