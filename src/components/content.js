@@ -8,7 +8,8 @@ import Profile1 from "../assets/rishabDugar.jpeg"
 export default function Content() {
     return (
         <Box sx = {{paddingTop:"2rem", background: "hsl(0, 0%, 95%)"}}>
-            <Box sx={{
+            <Box
+                sx={{
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
