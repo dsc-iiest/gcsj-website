@@ -1,41 +1,45 @@
 import Content from './content';
-import { CssBaseline, Box, Typography, Button} from '@mui/material';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-
+import { CssBaseline, Box, Typography, IconButton} from '@mui/material';
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
 function Homepage() {
-    return (
-        <>
-            <CssBaseline />
-            <Box sx = {{alignContent: "center", justifyItems: "center", textAlign: "center"}} className="banner">
-                <Typography className='bannerText' 
-                            sx={{ fontFamily: "Poppins", 
-                                  fontSize: "4.2em", 
-                                  fontWeight: "bold",
-                                  lineHeight: "5rem",
-                                  }}> Cloud Study Jams</Typography>
-                <Box sx={{paddingTop: "1rem"}}>
-                    <Button
-                        href='https://www.iiests.ac.in/' 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        size="large"
-                        startIcon={<LocationOnIcon />}
-                        sx={{
-                            border: "0.2rem solid #ff9e0f",
-                            color: "#ff9e0f",
-                            borderRadius: "0.8rem",
-                            margin: "0.8rem",
-                            width: "12rem",
-                            fontWeight: 700
-                        }}>IIEST, Shibpur
-                    </Button>
-                    
-                </Box>
-            </Box>
-            <Content />
-            <CssBaseline />
-        </>
-    )
+  const scrollToContent = () => {
+    const scrollPosition = (window.innerHeight-(window.innerHeight*0.1));
+    window.scrollTo({
+      top: scrollPosition,
+      behavior: 'smooth',
+    });
+  };
+  return (
+    <>
+      <CssBaseline />
+      <Box sx={{ display: "flex", flexDirection: "column", alignContent: "center", justifyItems: "center", textAlign: "center" }} className="banner">
+        <Typography className='bannerText'
+          sx={{
+            fontFamily: "Poppins",
+            fontSize: "4.2em",
+            fontWeight: "bold",
+            lineHeight: "5rem",
+          }}> Cloud Study Jams
+        </Typography>
+      <IconButton 
+      onClick={scrollToContent}
+      sx = {{
+        color: "white",
+        position: "absolute",
+        bottom: 0
+      }}><KeyboardDoubleArrowDownIcon 
+      sx = {{
+        fontSize: "2rem", 
+        opacity: 0.5,
+        transition:"0.5s ease",
+        "&:hover":{
+          transform: "scale(1.5)"
+        }}} /></IconButton>
+      </Box>
+      <Content />
+      <CssBaseline />
+    </>
+  )
 }
 
 export default Homepage;

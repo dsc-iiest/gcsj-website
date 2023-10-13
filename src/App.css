@@ -115,15 +115,7 @@ body {
 }
 
 .footerhover:hover{
-    color:#4486f4;
-}
-
-.iconhover{
-    transition: all ease 2s;
-}
-
-.iconhover:hover{
-    color: #4486f4;
+    color:rgb(27, 171, 255);
 }
 
 .leaderboard{
@@ -142,7 +134,7 @@ body {
 
 	background-color: rgba(255, 255, 255, 0.258);
 
-	background-color: rgba(255, 255, 255, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 	/* background-color: var(--teal-dark); */
 
 	border-radius: 25px;

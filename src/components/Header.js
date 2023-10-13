@@ -1,4 +1,4 @@
-import {IconButton, Menu, MenuItem, AppBar, Tab, Tabs, Toolbar, Typography, useMediaQuery, useTheme, CssBaseline } from '@mui/material'
+import {IconButton, Menu, MenuItem, AppBar, Toolbar, Typography, useMediaQuery, useTheme, CssBaseline, Button, ButtonGroup } from '@mui/material'
 import { React, useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import CloudIcon from '../assets/GCRFicon.png';
@@ -37,11 +37,12 @@ const Menubutton = () => {
 
 const HeaderTabs = ()=>{
   return (
-    <Tabs>
-      <NavLink className="navlink" to="/"><Tab sx={{ color: "black", fontWeight: 600, fontSize: "0.8rem" }} label="Home" /></NavLink>
-      <NavLink className="navlink" to="/resources"><Tab sx={{ color: "black", fontWeight: 600, fontSize: "0.8rem" }} label="Resources" /></NavLink>
-      <NavLink className="navlink" to="/leaderboard"><Tab sx={{ color: "black", fontWeight: 600, fontSize: "0.8rem" }} label="Leaderboard" /></NavLink>
-    </Tabs>
+    <ButtonGroup sx = {{textDecoration: "none",}}>
+      <NavLink className="navlink" to="/"><Button sx = {{border: 0, color: "black", backgroundColor: "inherit", fontWeight:600, textDecoration:"none",}}color="inherit">Home</Button></NavLink>
+      <NavLink className="navlink" to="/resources"><Button sx = {{border: 0, color: "black", backgroundColor: "inherit", fontWeight:600, textDecoration:"none",}} color="inherit">Resources</Button></NavLink>
+      <NavLink className="navlink" to="/leaderboard"><Button sx = {{border: 0, color: "black", backgroundColor: "inherit", fontWeight:600}} color="inherit">Leaderboard</Button></NavLink>
+      
+    </ButtonGroup>
   )
 }
 

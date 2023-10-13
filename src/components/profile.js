@@ -4,9 +4,9 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 import { Box, IconButton } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import {Link} from '@mui/material';
+import LanguageIcon from '@mui/icons-material/Language';
 
-export default function MediaCard({ name, description, profile, githubLink, linkedInLink }) {
+export default function MediaCard({ name, description, profile, githubLink, linkedInLink, portfolioLink }) {
     return (
         <Box sx={{ display: "flex", margin: "2rem", padding: "1rem", flexDirection: "column", textAlign: "center", justifyContent: "center", alignItems: "center", background: "#fff", borderRadius: "1.3rem"}}>
             <Typography variant="body2" sx={{ fontSize: "2.5rem", fontWeight: 900, fontFamily: "poppins" }}>
@@ -24,6 +24,7 @@ export default function MediaCard({ name, description, profile, githubLink, link
             <Box sx={{ display: "flex", "justifyContent": "center" }}>
                 <IconButton href = {githubLink} target="_blank" rel="noopener noreferrer" size="large"><GitHubIcon /></IconButton>
                 <IconButton href = {linkedInLink} target="_blank" rel="noopener noreferrer" size="large"><LinkedInIcon /></IconButton>
+                <IconButton href = {portfolioLink} target="_blank" rel="noopener noreferrer" size="large"><LanguageIcon /></IconButton>
             </Box>
         </Box>
     )

@@ -1,5 +1,4 @@
-import { Box, Typography, Button} from '@mui/material';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Box, Typography} from '@mui/material';
 
 function Resources() {
     return (
@@ -12,18 +11,6 @@ function Resources() {
                   lineHeight: "5rem",
                   }}>Resources
               </Typography>
-              <Button
-                  size="large"
-                  startIcon={<LocationOnIcon />}
-                  sx={{
-                      border: "0.2rem solid #da483b",
-                      color: "#da483b",
-                      borderRadius: "0.8rem",
-                      margin: "0.8rem",
-                      width: "12rem",
-                      fontWeight: 700
-                  }}>Go somewhere
-              </Button>
           </Box>
         </>
     )
