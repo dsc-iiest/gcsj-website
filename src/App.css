@@ -112,6 +112,7 @@ body {
 }
 
 .leaderboard{
+    width: 75vw;
     border-radius: 10px;
 }
 
@@ -133,4 +134,26 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
 	background-color: rgba(255, 255, 255, 0.46);
+}
+
+@media (max-width: 400px) {
+    .leaderboard {
+        width: 90vw;
+    }
+  }
+
+.firstpos {
+    color: hsl(51, 100.00%, 35.00%);
+    background-color: hsl(51, 100.00%, 70.00%);
+    font-weight: bold;
+}
+.secondpos {
+    color: hsl(0, 0.00%, 40%);
+    background-color: hsl(0, 0.00%, 80%);
+    font-weight: bold;
+}
+.thirdpos {
+    color: hsl(30, 60.80%,40.00%);
+    background-color: hsl(30, 60.80%,75.00%);
+    font-weight: bold;
 }
