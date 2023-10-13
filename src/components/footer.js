@@ -47,7 +47,7 @@ export default function Footer() {
                         flexWrap :"wrap",
                         justifyContent:"center"
                     }}>
-                        Made with <FavoriteIcon sx = {{color: "red", position: "relative", mx: "0.5rem"}}/> by <Link className="footerhover" href="#" sx={{textDecoration: "none" ,fontFamily: "poppins",color: "white", px: "0.5rem"}}>Soumyajit Karmakar</Link> and <Link className="footerhover" href="#" sx={{textDecoration: "none" ,fontFamily: "poppins",color: "white", px: "0.5rem"}}>Abhijit Karmakar</Link>
+                        Made with <FavoriteIcon sx = {{color: "red", position: "relative", mx: "0.5rem"}}/> by <Link className="footerhover" href="https://www.linkedin.com/in/abhijit-karmakar-009ab026b/" target="_blank" rel="noopener noreferrer" sx={{textDecoration: "none" ,fontFamily: "poppins",color: "white", px: "0.5rem"}}>Abhijit Karmakar</Link> and <Link className="footerhover" href="https://www.linkedin.com/in/soumyajit-karmakar-68362526b/" target="_blank" rel="noopener noreferrer" sx={{textDecoration: "none" ,fontFamily: "poppins",color: "white", px: "0.5rem"}}>Soumyajit Karmakar</Link>
                     </Typography>
                 </Box>
             </Box>
