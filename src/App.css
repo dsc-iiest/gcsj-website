@@ -92,22 +92,29 @@ body {
     color: #fff;
 }
 
-.navlink.active {
-    position: relative;
+.navlink{
+	position: relative;
 }
 
-.navlink.active::after {
-    content: "";
-    height: 4px;
-    width: 100%;
-    position: absolute;
+.navlink::after{
+	content: "";
+	height: 3px;
+    width : 100%;
+	position: absolute;
     bottom: 0;
     left: 0;
     background-color: green;
+    transform: scale(0);
+    transition: all ease 0.3s;
 }
 
-.footerhover {
-    transition: all ease-in-out 0.3s;
+.navlink.active::after{
+    transform: scale(1);
+}
+
+.footerhover{
+    color: white;
+    transition: ease-in-out 0.3s;
 }
 
 .footerhover:hover {

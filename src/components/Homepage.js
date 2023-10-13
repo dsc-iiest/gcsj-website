@@ -28,12 +28,14 @@ function Homepage() {
                 </Typography>
                 <Box sx={{ paddingTop: "1rem" }}>
                     <Button
-                        href="#start"
+                        href='https://www.iiests.ac.in/' 
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         size="large"
                         startIcon={<LocationOnIcon />}
                         sx={{
-                            border: "0.2rem solid #da483b",
-                            // color: "#da483b",
+                            border: "0.2rem solid #ff9e0f",
+                            color: "#ff9e0f",
                             borderRadius: "0.8rem",
                             margin: "0.8rem",
                             width: "12rem",

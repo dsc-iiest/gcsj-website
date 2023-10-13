@@ -6,17 +6,20 @@ import Homepage from './components/Homepage'
 import LeaderBoard from './components/LeaderB';
 import Resources from './components/Resources';
 import Footer from './components/footer';
+import ScrollToTop from './components/scrollTop';
+
 
 export default function App() {
     return (
         <Router>
             <Header />
-            <Routes>
-                <Route exact path='/' element={<Homepage/>} />
-                <Route exact path="/leaderboard" element={<LeaderBoard />} />
-                <Route exact path="/resources" element={<Resources />} />
-            </Routes>
+                <Routes>
+                    <Route exact path='/' element={<Homepage/>} />
+                    <Route exact path="/leaderboard" element={<LeaderBoard />} />
+                    <Route exact path="/resources" element={<Resources />} />
+                </Routes>
             <Footer />
+            <ScrollToTop />
         </Router>
     )
 }

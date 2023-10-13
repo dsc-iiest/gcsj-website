@@ -1,10 +1,9 @@
 import { Box, Divider, Toolbar, Typography } from "@mui/material";
-import codeIIEST from '../assets/codeIIEST.png'
+import codeIIEST_light from '../assets/codeIIEST_light.png'
 import gdsc from '../assets/gdscLogo.png'
 import MediaCard from "./profile";
 
-import Profile1 from "../assets/Jyoti.jpg"
-import Profile2 from "../assets/Arnab.jpeg"
+import Profile1 from "../assets/rishabDugar.jpeg"
 
 export default function Content() {
     return (
@@ -36,7 +35,7 @@ export default function Content() {
                 
             }}>
                 <Box className="logohome" sx = {{background: "transparent"}} >
-                    <img src = {codeIIEST} style = {{maxWidth: "10rem"}}/>
+                    <img src = {codeIIEST_light} style = {{maxWidth: "10rem"}}/>
                     <img src = {gdsc} style = {{maxWidth: "20rem"}}/>
                 </Box>
 
@@ -49,9 +48,7 @@ export default function Content() {
                     Along the way, you will learn & practice concepts like computing, application development, big data & machine learning using cloud & if you get stuck, you will have your "Facilitators" who are specially trained on Google Cloud to help.
                 </Toolbar>
 
-                <MediaCard name={"Jyoti Jaiswal"} description={"Hey, I am Jyoti Jaiswal. I like to introduce myself as a good observer, listener and reader. I am passionate about technology and human pyschology. I like to contribute in tech-communities. Besides that, I love cats more than I love dogs. Let's connect with me on twitter."} profile={Profile1} />
-
-                <MediaCard name={"Arnab Sen"} description={"I am a Software Developer with experience in Web Development, Automation, and Content Writing. For the past 2 years, I have worked around an immense variety of technologies and frameworks such as React, Vue in Frontend and Node, Flask, Rails in the Backend."} profile={Profile2} />
+                <MediaCard name={"Rishab Dugar"} description={"Passionate and dedicated Full-stack Web Developer proficient in both front-end and back-end development. Leveraging a solid foundation in MERN stack (MongoDB, Express.js, React, Node.js) and expertise in building robust RESTful APIs, I excel in delivering end-to-end solutions that seamlessly integrate user interfaces with powerful backend functionality. With a strong focus on creating captivating user experiences, I possess a keen eye for design and have successfully crafted visually appealing UIs and landing pages."} profile={Profile1} githubLink = {"https://github.com/DugarRishab"} linkedInLink = {"https://www.linkedin.com/in/dugar-rishab/"} />
             </Box>
         </Box>
     );
