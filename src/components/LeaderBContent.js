@@ -41,8 +41,10 @@ const sortingFunc = (a, b) => {
         return b[courses] - a[courses];
     } else if (b[skills] - a[skills] !== 0) {
         return b[skills] - a[skills];
-    } else {
+    } else if (b[genai] - a[genai] !== 0) {
         return b[genai] - a[genai];
+    } else {
+        return b["Student Name"] > a["Student Name"]? -1:1;
     }
 };
 
@@ -204,6 +206,7 @@ function LeaderBoardTablularize() {
                 disableColumnSelector
                 disableEval
                 disableRowSelectionOnClick
+                scrollbarSize={1}
             />
         </Box>
     );
