@@ -1,24 +1,37 @@
-import { Box, Typography} from '@mui/material';
+import { Box, Typography } from "@mui/material";
 
 function Resources() {
-    return (
-        <>
-          <Box sx = {{display: "flex", flexDirection: "column", alignContent: "center", justifyItems: "center", textAlign: "center"}} className="Rbanner">
-              <Typography
-                sx={{ fontFamily: "Poppins", 
-                  fontSize: "4.2em", 
-                  fontWeight: "bold",
-                  lineHeight: "5rem",
-                  }}>Resources
-              </Typography>
-          </Box>
-        </>
-    )
+  return (
+    <>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignContent: "center",
+          justifyItems: "center",
+          textAlign: "center",
+        }}
+        className="Rbanner"
+      >
+        <Typography
+          sx={{
+            fontFamily: "Poppins",
+            fontSize: "4.2em",
+            fontWeight: "bold",
+            lineHeight: "5rem",
+          }}
+        >
+          Resources
+        </Typography>
+      </Box>
+    </>
+  );
 }
 
 export default Resources;
 
-{/* <Box sx={{
+{
+  /* <Box sx={{
         backdropFilter: "blur(0.2rem)",
         backgroundColor: "#00000090",
         borderRadius: "1.5rem",
@@ -57,4 +70,5 @@ export default Resources;
           borderRadius: "1.5rem"
         }}>Check Report</Button>
 
-      </Box> */}
+      </Box> */
+}
