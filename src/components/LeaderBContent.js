@@ -48,16 +48,16 @@ const sortingFunc = (a, b) => {
 };
 
 function toTitleCase(str) {
-  const words = str.split(' ');
-  const titleCaseWords = words.map(function (word) {
-    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-  });
-  return titleCaseWords.join(' ');
+    const words = str.split(" ");
+    const titleCaseWords = words.map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    });
+    return titleCaseWords.join(" ");
 }
 
 rows.forEach((row, index) => {
     row.id = index + 1;
-    row["Student Name"] = toTitleCase(row["Student Name"])
+    row["Student Name"] = toTitleCase(row["Student Name"]);
 });
 
 function assignRanks(arr, sortingFunc) {
@@ -68,7 +68,11 @@ function assignRanks(arr, sortingFunc) {
     prev.rank = 1;
     for (let i = 1; i < sarr.length; i++) {
         let curr = sarr[i];
-        if (curr[courses] != prev[courses] || curr[skills] != prev[skills] || curr[genai]!=prev[genai]) {
+        if (
+            curr[courses] != prev[courses] ||
+            curr[skills] != prev[skills] ||
+            curr[genai] != prev[genai]
+        ) {
             rank = i + 1;
         }
         sarr[i].rank = rank;
@@ -77,7 +81,7 @@ function assignRanks(arr, sortingFunc) {
     return sarr;
 }
 
-const rows_ranked = assignRanks(rows, sortingFunc)
+const rows_ranked = assignRanks(rows, sortingFunc);
 function HeaderText({ line1, line2 }) {
     return (
         <Typography style={{ lineHeight: "1.2em", textAlign: "center" }}>
@@ -91,14 +95,18 @@ function HeaderText({ line1, line2 }) {
 const columns = [
     {
         field: "rank",
-        headerName: "Rank",
+        headerName: (
+            <Typography style={{ lineHeight: "1.2em" }}>Rank</Typography>
+        ),
         width: 60,
         headerClassName: "header",
         sortable: false,
     },
     {
         field: "Student Name",
-        headerName: "Name",
+        headerName: (
+            <Typography style={{ lineHeight: "1.2em" }}>Name</Typography>
+        ),
         headerClassName: "header",
         width: 350,
         sortable: false,
@@ -145,8 +153,6 @@ function renderStatusCell(params) {
 }
 
 const GetRowStyle = (params) => {
-    console.log("hello");
-    console.log(params.row.rank);
     if (params.row.rank == 1) {
         return "firstpos";
     } else if (params.row.rank == 2) {
@@ -159,7 +165,7 @@ const GetRowStyle = (params) => {
 
 function LeaderBoardTablularize() {
     return (
-        <Box className="leaderboard">
+        <Box className="leaderboard" style={{boxShadow: "1px 1px 9px 0px hsl(0, 0.00%, 84.10%)"}}>
             <DataGrid
                 rows={rows_ranked}
                 columns={columns}
