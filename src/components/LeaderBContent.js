@@ -26,20 +26,24 @@ const [courses, skills, genai] = [
   "# of GenAI Game Completed",
 ];
 const sortingFunc = (a, b) => {
-  if (
-    b[courses] + b[skills] + b[genai] - a[courses] - a[skills] - a[genai] !=
-    0
-  ) {
-    return (
-      b[courses] + b[skills] + b[genai] - a[courses] - a[skills] - a[genai]
-    );
-  } else if (b[courses] - a[courses] != 0) {
-    return b[courses] - a[courses];
-  } else if (b[skills] - a[skills] != 0) {
-    return b[skills] - a[skills];
-  } else {
-    return b[genai] - a[genai];
-  }
+    if (
+        b[courses] + b[skills] + b[genai] - a[courses] - a[skills] - a[genai] !== 0
+    ) {
+        return (
+            b[courses] +
+            b[skills] +
+            b[genai] -
+            a[courses] -
+            a[skills] -
+            a[genai]
+        );
+    } else if (b[courses] - a[courses] !== 0) {
+        return b[courses] - a[courses];
+    } else if (b[skills] - a[skills] !== 0) {
+        return b[skills] - a[skills];
+    } else {
+        return b[genai] - a[genai];
+    }
 };
 
 function toTitleCase(str) {
@@ -56,24 +60,24 @@ rows.forEach((row, index) => {
 });
 
 function assignRanks(arr, sortingFunc) {
-  const sarr = [...arr];
-  sarr.sort(sortingFunc);
-  let rank = 1;
-  let prev = sarr[0];
-  prev.rank = 1;
-  for (let i = 1; i < sarr.length; i++) {
-      let curr = sarr[i];
-      if (
-          curr[courses] !== prev[courses] ||
-          curr[skills] !== prev[skills] ||
-          curr[genai] !== prev[genai]
-      ) {
-          rank = i + 1;
-      }
-      sarr[i].rank = rank;
-      prev = curr;
-  }
-  return sarr;
+    const sarr = [...arr];
+    sarr.sort(sortingFunc);
+    let rank = 1;
+    let prev = sarr[0];
+    prev.rank = 1;
+    for (let i = 1; i < sarr.length; i++) {
+        let curr = sarr[i];
+        if (
+            curr[courses] !== prev[courses] ||
+            curr[skills] !== prev[skills] ||
+            curr[genai] !== prev[genai]
+        ) {
+            rank = i + 1;
+        }
+        sarr[i].rank = rank;
+        prev = curr;
+    }
+    return sarr;
 }
 
 const rows_ranked = assignRanks(rows, sortingFunc);
@@ -148,14 +152,14 @@ function renderStatusCell(params) {
 }
 
 const GetRowStyle = (params) => {
-  if (params.row.rank == 1) {
-    return "firstpos";
-  } else if (params.row.rank == 2) {
-    return "secondpos";
-  } else if (params.row.rank == 3) {
-    return "thirdpos";
-  }
-  return {};
+    if (params.row.rank === 1) {
+        return "firstpos";
+    } else if (params.row.rank === 2) {
+        return "secondpos";
+    } else if (params.row.rank === 3) {
+        return "thirdpos";
+    }
+    return {};
 };
 
 function LeaderBoardTablularize() {
