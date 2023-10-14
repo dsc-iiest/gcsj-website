@@ -1,10 +1,11 @@
 import LeaderBcontent from "./LeaderBContent";
 import { Box, Typography } from "@mui/material";
+import ScrollToContent from "./scrollBanner";
 
 const Report = () => {
     return (
         <>
-            <Box className="Lbanner">
+            <Box className="Lbanner" sx = {{marginTop: "60px"}}>
                 <Typography
                     sx={{
                         fontWeight: 600,
@@ -27,6 +28,7 @@ const Report = () => {
                     leaderboard. Join the competition and climb the ranks to
                     showcase your skills!
                 </Typography>
+                <ScrollToContent />
             </Box>
             <LeaderBcontent />
         </>

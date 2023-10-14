@@ -108,7 +108,7 @@ const HeaderComp = () => {
     const mobileView = useMediaQuery(theme.breakpoints.down(800));
     return (
         <>
-            <AppBar sx={{ backgroundColor: "white" }}>
+            <AppBar sx={{ backgroundColor: "white", height: "60px"}}>
                 <Toolbar sx={{ display: "flex" }}>
                     <img
                         src={CloudIcon}
