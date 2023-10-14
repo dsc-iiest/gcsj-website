@@ -127,11 +127,10 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 5px;
-  background-color: transparent;
-  margin-left: 5px;
-  padding: 5px;
-  border: 0px solid rgb(180, 157, 157);
+    width: 5px;
+    background-color: transparent;
+    margin-left: 5px;
+    padding: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.258);
@@ -139,8 +138,8 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   /* background-color: var(--teal-dark); */
 
-  background-color: rgba(0, 0, 0, 0.5);
-  /* background-color: var(--teal-dark); */
+	background-color: hsl(0, 0%, 74%);
+	/* background-color: var(--teal-dark); */
 
   border-radius: 25px;
 }
