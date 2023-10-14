@@ -125,7 +125,7 @@ const HeaderComp = () => {
                             fontWeight: 600,
                         }}
                     >
-                        Google Cloud Study Jams
+                        {mobileView ? "GCSJ" : "Google Cloud Study Jams"}
                     </Typography>
                     {mobileView ? <Menubutton /> : <HeaderTabs />}
                 </Toolbar>
