@@ -6,24 +6,24 @@ import CancelIcon from "@mui/icons-material/Cancel";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 function readExcelFile() {
-    const filePath = "/assets/data/leaderboard.xlsx";
+  const filePath = "/assets/data/leaderboard.xlsx";
 
-    return fetch(filePath)
-        .then((response) => response.arrayBuffer())
-        .then((data) => {
-            const workbook = XLSX.read(data, { type: "array" });
-            const sheetName = workbook.SheetNames[0];
-            const worksheet = workbook.Sheets[sheetName];
-            const jsonData = XLSX.utils.sheet_to_json(worksheet);
-            return jsonData;
-        });
+  return fetch(filePath)
+    .then((response) => response.arrayBuffer())
+    .then((data) => {
+      const workbook = XLSX.read(data, { type: "array" });
+      const sheetName = workbook.SheetNames[0];
+      const worksheet = workbook.Sheets[sheetName];
+      const jsonData = XLSX.utils.sheet_to_json(worksheet);
+      return jsonData;
+    });
 }
 
 const rows = await readExcelFile();
 const [courses, skills, genai] = [
-    "# of Courses Completed",
-    "# of Skill Badges Completed",
-    "# of GenAI Game Completed",
+  "# of Courses Completed",
+  "# of Skill Badges Completed",
+  "# of GenAI Game Completed",
 ];
 const sortingFunc = (a, b) => {
     if (
@@ -49,16 +49,16 @@ const sortingFunc = (a, b) => {
 };
 
 function toTitleCase(str) {
-    const words = str.split(" ");
-    const titleCaseWords = words.map(function (word) {
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
-    return titleCaseWords.join(" ");
+  const words = str.split(" ");
+  const titleCaseWords = words.map(function (word) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+  return titleCaseWords.join(" ");
 }
 
 rows.forEach((row, index) => {
-    row.id = index + 1;
-    row["Student Name"] = toTitleCase(row["Student Name"]);
+  row.id = index + 1;
+  row["Student Name"] = toTitleCase(row["Student Name"]);
 });
 
 function assignRanks(arr, sortingFunc) {
@@ -84,73 +84,73 @@ function assignRanks(arr, sortingFunc) {
 
 const rows_ranked = assignRanks(rows, sortingFunc);
 function HeaderText({ line1, line2 }) {
-    return (
-        <Typography style={{ lineHeight: "1.2em", textAlign: "center" }}>
-            {line1}
-            <br />
-            {line2}
-        </Typography>
-    );
+  return (
+    <Typography style={{ lineHeight: "1.2em", textAlign: "center" }}>
+      {line1}
+      <br />
+      {line2}
+    </Typography>
+  );
 }
 
 const columns = [
-    {
-        field: "rank",
-        headerName: (
-            <Typography style={{ lineHeight: "1.2em" }}>Rank</Typography>
-        ),
-        width: 60,
-        headerClassName: "header",
-        sortable: false,
-    },
-    {
-        field: "Student Name",
-        headerName: (
-            <Typography style={{ lineHeight: "1.2em" }}>Name</Typography>
-        ),
-        headerClassName: "header",
-        width: 350,
-        sortable: false,
-    },
-    {
-        field: "# of Courses Completed",
-        headerName: <HeaderText line1={"Courses"} line2={"Done"} />,
-        headerClassName: "header",
-        type: "number",
-        width: 120,
-    },
-    {
-        field: "# of Skill Badges Completed",
-        headerName: <HeaderText line1={"Skill badges"} line2={"earned"} />,
-        headerClassName: "header",
-        type: "number",
-        width: 120,
-    },
-    {
-        field: "# of GenAI Game Completed",
-        headerName: <HeaderText line1={"GenAI games"} line2={"completed"} />,
-        headerClassName: "header",
-        type: "number",
-        width: 120,
-    },
-    {
-        field: "Total Completions of both Pathways",
-        headerName: (
-            <HeaderText line1={"Total completion of"} line2={"Both pathways"} />
-        ),
-        headerClassName: "header",
-        width: 190,
-        renderCell: renderStatusCell,
-    },
+  {
+    field: "rank",
+    headerName: (
+      <Typography style={{ lineHeight: "1.2em" }}>Rank</Typography>
+    ),
+    width: 60,
+    headerClassName: "header",
+    sortable: false,
+  },
+  {
+    field: "Student Name",
+    headerName: (
+      <Typography style={{ lineHeight: "1.2em" }}>Name</Typography>
+    ),
+    headerClassName: "header",
+    width: 350,
+    sortable: false,
+  },
+  {
+    field: "# of Courses Completed",
+    headerName: <HeaderText line1={"Courses"} line2={"Done"} />,
+    headerClassName: "header",
+    type: "number",
+    width: 120,
+  },
+  {
+    field: "# of Skill Badges Completed",
+    headerName: <HeaderText line1={"Skill badges"} line2={"earned"} />,
+    headerClassName: "header",
+    type: "number",
+    width: 120,
+  },
+  {
+    field: "# of GenAI Game Completed",
+    headerName: <HeaderText line1={"GenAI games"} line2={"completed"} />,
+    headerClassName: "header",
+    type: "number",
+    width: 120,
+  },
+  {
+    field: "Total Completions of both Pathways",
+    headerName: (
+      <HeaderText line1={"Total completion of"} line2={"Both pathways"} />
+    ),
+    headerClassName: "header",
+    width: 190,
+    renderCell: renderStatusCell,
+  },
 ];
 
 function renderStatusCell(params) {
-    const status = params.value;
-    if (status === "Yes") {
-        return <CheckCircleIcon sx={{ color: "#1ca45c" }} />;
-    } else if (status === "No") {
-        return <CancelIcon sx={{ color: "#da483b" }} />;
-    }
+  const status = params.value;
+  if (status === "Yes") {
+    return <CheckCircleIcon sx={{ color: "#1ca45c" }} />;
+  } else if (status === "No") {
+    return <CancelIcon sx={{ color: "#da483b" }} />;
+  }
 }
 
 const GetRowStyle = (params) => {
@@ -213,19 +213,19 @@ function LeaderBoardTablularize() {
 }
 
 export default function Content() {
-    return (
-        <Box
-            sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                padding: "20px",
-                width: "100%",
-                flexDirection: "column",
-            }}
-        >
-            <CssBaseline />
-            <LeaderBoardTablularize />
-        </Box>
-    );
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        padding: "20px",
+        width: "100%",
+        flexDirection: "column",
+      }}
+    >
+      <CssBaseline />
+      <LeaderBoardTablularize />
+    </Box>
+  );
 }
