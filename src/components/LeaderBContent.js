@@ -43,38 +43,35 @@ const sortingFunc = (a, b) => {
 };
 
 function toTitleCase(str) {
-    const words = str.split(" ");
-    const titleCaseWords = words.map(function (word) {
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-    });
-    return titleCaseWords.join(" ");
+  const words = str.split(" ");
+  const titleCaseWords = words.map(function (word) {
+    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+  });
+  return titleCaseWords.join(" ");
 }
 
 rows.forEach((row, index) => {
-    row.id = index + 1;
-    row["Student Name"] = toTitleCase(row["Student Name"]);
+  row.id = index + 1;
+  row["Student Name"] = toTitleCase(row["Student Name"]);
 });
 
 function assignRanks(arr, sortingFunc) {
-    const sarr = [...arr];
-    sarr.sort(sortingFunc);
-    let rank = 1;
-    let prev = sarr[0];
-    prev.rank = 1;
-    for (let i = 1; i < sarr.length; i++) {
-        let curr = sarr[i];
-        if (
-            curr[courses] != prev[courses] ||
-            curr[skills] != prev[skills] ||
-            curr[genai] != prev[genai]
-        ) {
-            rank = i + 1;
-        }
-        sarr[i].rank = rank;
-        prev = curr;
-    }
-    sarr[i].rank = rank;
-    prev = curr;
+  const sarr = [...arr];
+  sarr.sort(sortingFunc);
+  let rank = 1;
+  let prev = sarr[0];
+  prev.rank = 1;
+  for (let i = 1; i < sarr.length; i++) {
+      let curr = sarr[i];
+      if (
+          curr[courses] !== prev[courses] ||
+          curr[skills] !== prev[skills] ||
+          curr[genai] !== prev[genai]
+      ) {
+          rank = i + 1;
+      }
+      sarr[i].rank = rank;
+      prev = curr;
   }
   return sarr;
 }
@@ -91,54 +88,54 @@ function HeaderText({ line1, line2 }) {
 }
 
 const columns = [
-    {
-        field: "rank",
-        headerName: (
-            <Typography style={{ lineHeight: "1.2em" }}>Rank</Typography>
-        ),
-        width: 60,
-        headerClassName: "header",
-        sortable: false,
-    },
-    {
-        field: "Student Name",
-        headerName: (
-            <Typography style={{ lineHeight: "1.2em" }}>Name</Typography>
-        ),
-        headerClassName: "header",
-        width: 350,
-        sortable: false,
-    },
-    {
-        field: "# of Courses Completed",
-        headerName: <HeaderText line1={"Courses"} line2={"Done"} />,
-        headerClassName: "header",
-        type: "number",
-        width: 120,
-    },
-    {
-        field: "# of Skill Badges Completed",
-        headerName: <HeaderText line1={"Skill badges"} line2={"earned"} />,
-        headerClassName: "header",
-        type: "number",
-        width: 120,
-    },
-    {
-        field: "# of GenAI Game Completed",
-        headerName: <HeaderText line1={"GenAI games"} line2={"completed"} />,
-        headerClassName: "header",
-        type: "number",
-        width: 120,
-    },
-    {
-        field: "Total Completions of both Pathways",
-        headerName: (
-            <HeaderText line1={"Total completion of"} line2={"Both pathways"} />
-        ),
-        headerClassName: "header",
-        width: 190,
-        renderCell: renderStatusCell,
-    },
+  {
+    field: "rank",
+    headerName: (
+      <Typography style={{ lineHeight: "1.2em" }}>Rank</Typography>
+    ),
+    width: 60,
+    headerClassName: "header",
+    sortable: false,
+  },
+  {
+    field: "Student Name",
+    headerName: (
+      <Typography style={{ lineHeight: "1.2em" }}>Name</Typography>
+    ),
+    headerClassName: "header",
+    width: 350,
+    sortable: false,
+  },
+  {
+    field: "# of Courses Completed",
+    headerName: <HeaderText line1={"Courses"} line2={"Done"} />,
+    headerClassName: "header",
+    type: "number",
+    width: 120,
+  },
+  {
+    field: "# of Skill Badges Completed",
+    headerName: <HeaderText line1={"Skill badges"} line2={"earned"} />,
+    headerClassName: "header",
+    type: "number",
+    width: 120,
+  },
+  {
+    field: "# of GenAI Game Completed",
+    headerName: <HeaderText line1={"GenAI games"} line2={"completed"} />,
+    headerClassName: "header",
+    type: "number",
+    width: 120,
+  },
+  {
+    field: "Total Completions of both Pathways",
+    headerName: (
+      <HeaderText line1={"Total completion of"} line2={"Both pathways"} />
+    ),
+    headerClassName: "header",
+    width: 190,
+    renderCell: renderStatusCell,
+  },
 ];
 
 function renderStatusCell(params) {
@@ -151,61 +148,61 @@ function renderStatusCell(params) {
 }
 
 const GetRowStyle = (params) => {
-    if (params.row.rank == 1) {
-        return "firstpos";
-    } else if (params.row.rank == 2) {
-        return "secondpos";
-    } else if (params.row.rank == 3) {
-        return "thirdpos";
-    }
-    return {};
+  if (params.row.rank == 1) {
+    return "firstpos";
+  } else if (params.row.rank == 2) {
+    return "secondpos";
+  } else if (params.row.rank == 3) {
+    return "thirdpos";
+  }
+  return {};
 };
 
 function LeaderBoardTablularize() {
-    return (
-        <Box className="leaderboard" style={{boxShadow: "1px 1px 9px 0px hsl(0, 0.00%, 84.10%)"}}>
-            <DataGrid
-                rows={rows_ranked}
-                columns={columns}
-                sx={{
-                    "& .MuiDataGrid-cell:": {
-                        display: "flex",
-                        alignContent: "center",
-                    },
-                    "& .numbers": {
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                    },
-                }}
-                initialState={{
-                    pagination: {
-                        paginationModel: {
-                            pageSize: 10,
-                        },
-                    },
-                }}
-                getCellClassName={(params) => {
-                    if (
-                        typeof params.value === "number" ||
-                        params.value === "No" ||
-                        params.value === "Yes"
-                    ) {
-                        return "numbers";
-                    }
-                    return "";
-                }}
-                getRowClassName={GetRowStyle}
-                autoHeight
-                pageSizeOptions={[10, 50, 100]}
-                disableColumnMenu
-                disableColumnFilter
-                disableColumnSelector
-                disableEval
-                disableRowSelectionOnClick
-            />
-        </Box>
-    );
+  return (
+    <Box className="leaderboard" style={{ boxShadow: "1px 1px 9px 0px hsl(0, 0.00%, 84.10%)" }}>
+      <DataGrid
+        rows={rows_ranked}
+        columns={columns}
+        sx={{
+          "& .MuiDataGrid-cell:": {
+            display: "flex",
+            alignContent: "center",
+          },
+          "& .numbers": {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          },
+        }}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 10,
+            },
+          },
+        }}
+        getCellClassName={(params) => {
+          if (
+            typeof params.value === "number" ||
+            params.value === "No" ||
+            params.value === "Yes"
+          ) {
+            return "numbers";
+          }
+          return "";
+        }}
+        getRowClassName={GetRowStyle}
+        autoHeight
+        pageSizeOptions={[10, 50, 100]}
+        disableColumnMenu
+        disableColumnFilter
+        disableColumnSelector
+        disableEval
+        disableRowSelectionOnClick
+      />
+    </Box>
+  );
 }
 
 export default function Content() {
