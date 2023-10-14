@@ -102,7 +102,7 @@ export default function Footer() {
                         <FacebookIcon />
                     </IconButton>
                     <IconButton
-                        href="codeiiest.iiest@gmail.com"
+                        href="mailto:codeiiest.iiest@gmail.com"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="iconhover"
