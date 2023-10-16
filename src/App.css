@@ -91,6 +91,7 @@ body {
 .header {
   background-color: hsl(218, 89%, 66%);
   color: #fff;
+  flex-grow: 1;
 }
 
 .navlink {
@@ -123,7 +124,7 @@ body {
 }
 
 .leaderboard {
-  width: 75vw;
+  max-width: 75vw;
   border-radius: 10px;
 }
 
@@ -151,7 +152,7 @@ body {
 
 @media (max-width: 400px) {
   .leaderboard {
-    width: 90vw;
+    max-width: 95vw;
   }
 }
 

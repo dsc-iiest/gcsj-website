@@ -61,6 +61,8 @@ rows.forEach((row, index) => {
   row["Student Name"] = toTitleCase(row["Student Name"]);
 });
 
+
+var [gold, silver, bronze] = [1, 2, 3]
 function assignRanks(arr, sortingFunc) {
     const sarr = [...arr];
     sarr.sort(sortingFunc);
@@ -74,7 +76,7 @@ function assignRanks(arr, sortingFunc) {
             curr[skills] !== prev[skills] ||
             curr[genai] !== prev[genai]
         ) {
-            rank = i + 1;
+            rank = rank + 1;
         }
         sarr[i].rank = rank;
         prev = curr;
@@ -154,11 +156,11 @@ function renderStatusCell(params) {
 }
 
 const GetRowStyle = (params) => {
-    if (params.row.rank === 1) {
+    if (params.row.rank === gold) {
         return "firstpos";
-    } else if (params.row.rank === 2) {
+    } else if (params.row.rank === silver) {
         return "secondpos";
-    } else if (params.row.rank === 3) {
+    } else if (params.row.rank === bronze) {
         return "thirdpos";
     }
     return {};
