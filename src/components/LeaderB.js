@@ -1,5 +1,5 @@
 import LeaderBcontent from "./LeaderBContent";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography} from "@mui/material";
 import ScrollToContent from "./scrollBanner";
 
 const Report = () => {
